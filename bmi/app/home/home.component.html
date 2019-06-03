@@ -1,0 +1,23 @@
+<ActionBar title="Home" class="action-bar">
+</ActionBar>
+
+<GridLayout>
+    <ScrollView class="page">
+        <StackLayout class="home-panel">
+            <!--Add your page content here-->
+            <Image src="~/images/BMI.jpg" (tap)="add()" col="1"></Image>
+            <Label textWrap="true" text="*YOUR WEIGHT" class="h3 description-label"></Label>
+            <TextField [(ngModel)]="weight" hint="Enter weight in kilograms..."></TextField>
+            <Label textWrap="true" text="" class="h3 description-label"></Label>
+            <Label textWrap="true" text="*YOUR HEIGHT " class="h3 description-label"></Label>
+            <TextField [(ngModel)]="feet" hint="Enter feet..."></TextField>
+            <TextField [(ngModel)]="inches" hint="Enter inches..."></TextField>
+            <Label textWrap="true" textAlignment="center" [text]="bmi" color="#a31dad"
+                fontSize="20"></Label>
+            <Label textWrap="true" textAlignment="center" color="#7ed12b"
+                fontSize="20" text="YOUR HELTH LEVEL IS {{category}}!!!">
+            </Label>
+            <Button text="Button" (tap)="onButtonTap(weight,feet,inches)"></Button>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>
